@@ -1,0 +1,4 @@
+ordre       @_IP_client           port_client                                   informations                                  port_serveur           @_IP_serveur      
+                                                    HTTP: GET /connecttest.txt HTTP/1.1
+  1       192.168.21.171             61871         | ------------------------------------------------------------------> |          80                13.107.4.52       
+

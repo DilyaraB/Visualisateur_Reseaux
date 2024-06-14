@@ -1,0 +1,13 @@
+0000   f0 9f c2 18 be de f0 9e 4a 5a ce 22 08 00 45 00   ........JZ."..E.
+0010   00 c2 a0 87 40 00 80 06 00 00 c0 a8 15 ab 0d 6b   ....@..........k
+0020   04 34 f1 af 00 50 cd 23 e0 b0 dd fa 75 8e 50 18   .4...P.#....u.P.
+0030   01 02 e8 a6 00 00 47 45 54 20 2f 63 6f 6e 6e 65   ......GET /conne
+0040   63 74 74 65 73 74 2e 74 78 74 20 48 54 54 50 2f   cttest.txt HTTP/
+0050   31 2e 31 0d 0a 43 61 63 68 65 2d 43 6f 6e 74 72   1.1..Cache-Contr
+0060   6f 6c 3a 20 6e 6f 2d 63 61 63 68 65 0d 0a 43 6f   ol: no-cache..Co
+0070   6e 6e 65 63 74 69 6f 6e 3a 20 43 6c 6f 73 65 0d   nnection: Close.
+0080   0a 50 72 61 67 6d 61 3a 20 6e 6f 2d 63 61 63 68   .Pragma: no-cach
+0090   65 0d 0a 55 73 65 72 2d 41 67 65 6e 74 3a 20 4d   e..User-Agent: M
+00a0   69 63 72 6f 73 6f 66 74 20 4e 43 53 49 0d 0a 48   icrosoft NCSI..H
+00b0   6f 73 74 3a 20 77 77 77 2e 6d 73 66 74 63 6f 6e   ost: www.msftcon
+00c0   6e 65 63 74 74 65 73 74 2e 63 6f 6d 0d 0a 0d 0a   necttest.com....
