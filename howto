@@ -1,0 +1,135 @@
+HOW TO RUN visualisateur.py
+
+Dans notre programme on utilise les libraires : tkinter, sys, os et random. Pour lancer notre programme, il faut avoir ces libraires sur votre PC. Comme les libraires sauf tkinter sont les modules de base intégrés dans Python, normalement vous n'avez rien à faire pour les utiliser. Si ce n'est pas le cas, il faut les installer. 
+
+Pour installer Tkinter sur :
+    Linux :
+https://stacklima.com/comment-installer-tkinter-sur-linux/
+
+    Mac :
+https://stacklima.com/comment-installer-tkinter-sur-macos/
+
+    Windows :
+https://stacklima.com/comment-installer-tkinter-sous-windows/
+
+Pour installer Python3 : https://www.python.org/downloads/
+
+
+
+Les étapes pour lancer le programme : 
+
+1)Vérifier que tkinter et Python3 sont exécutables.
+    Pour Windows il faut avoir python installé et/ou utiliser conda. On recommande de lancer le programme dans VisualStudioCode
+
+2)Ouvrir un terminal 
+    Pour Windows on recommande Anaconda Prompt ou PowerShell
+        https://docs.anaconda.com/anaconda/install/windows/
+
+
+3) Se déplacer vers le répertoire où se trouve visualisateur.py. 
+    Donc lancez la commande : cd path_vers_projet. 
+
+4)Exécution du visualisateur:
+
+    SUR MAC :
+	Vérifiez que Python3 et tkinter sont installés en lancant les commandes : 
+                	python3 -V
+                	pip3 install --upgrade pip
+                	pip3 install python3-tk
+
+        Possibilité 1) :
+			
+		    1) Utiliser Makefile (Seulement sur MAC):
+            2) Lancez la commande : make 
+         	3) C'est tout, passez à l'étape 5. 
+
+        Possibilité 2) : 
+
+            1) Executez le programme avec : python3 visualisateur.py
+          	2) C'est tout, passez à l'étape 5.
+
+    SUR VISUAL STUDIO CODE (Recommandé):
+        Ouvrir le répertoire du programme dans VSH et lancer le programme avec Run (F5).
+        VSL va recommander les installations nécessaires s'il y en a une.
+
+    SUR WINDOWS:
+        Si vous etes sur un Anaconda Prompt ou Anaconda PowerShell Prompt lancez la commande : 
+            python visualisateur.py
+        (tkinter est déjà installé dans Anaconda)
+
+        Si vous etes sur PowerShell :
+            1)Verifiez que Python3 et tkinter sont installés en lancant les commandes : 
+                python3 -V
+                pip3 install --upgrade pip
+                pip3 install python3-tk
+            2)Executez le programme avec : python3 visualisateur.py
+        
+        On ne recommende pas d'utiliser UBUNTU, car DISPLAY peut causer une erreur. Il faut installer Xorg et exporter DISPLAY mais cela ne marche pas tout le temps. Si c'est le cas, lancez BETAversionSansInterface.py. Cela ne lance pas l'interface graphique, mais le résultat est enregistré dans le répertoire résultats avec un nom : RESULTAT_{nomdufichier}.txt
+         
+
+    SUR LINUX :
+        On recommande d'utiliser VSC. 
+        Sinon :
+        1)Vérifiez que Python3 et tkinter sont installés en lançant la commande : 
+        sudo apt-get install python3-tk
+        2)Exécuter le programme avec : python3 visualisateur.py 
+          ou avec la commande : make
+        En cas d'erreur : utiliser ssh avec un ordinateur distant ou installer xorg et lancer 'export DISPLAY:0'.
+
+        Si vous ne pouvez pas regler le problème de Tkinter, alors repetez les étapes avec le fichier BETAversionSansInterface.py.
+        Dans ce cas-là, vous n'auriez pas l'interface graphique du visualisateur où on filtre les flux. 
+        Mais les résultats seront enrégistrés dans le fichier test résultat qui sera sauvegardé dans le répertoire resultats.
+
+
+
+5) Le terminal affichera "Entrez le chemin/le nom du fichier texte :"
+    Entrer le nom du fichier à visualiser contenant un/des hexdump/s sur le terminal. 
+
+    Une interface graphique va être lancée et le résultat va être enregistré dans le répertoire 'resultats' avec un nom RESULTAT_{nomdufichier}.
+
+
+6) Vous pouvez désormais appliquer des filtres sur des flux.
+    Le filtrage : 
+
+        On peut filtrer les connexions lues du fichier sorti selon les types protocoles et selon les adresses IP client et/ou serveur ou les deux en même temps.
+
+        Pour la syntaxe du filtrage, si on veut filtrer :
+            1. Par l'@ IP :
+                On doit écrire "ipc=="+ipClient pour l'@ client et "ips=="+ipServeur pour l'@ serveur. Attention, on ne doit pas mettre les espaces entre les symboles '='
+            2. Par les types de protocoles :
+                On peut écrire "HTTP", "TCP", "http" ou bien "tcp".
+
+        Comment filtrer?
+            Tapez des contraintes du filtrage que vous souhaitez dans le box d'entrée.
+            Cliquez sur le bouton 'Filter'.
+            Vous pouvez facilement revenir à l'état sans filtrage en appuyant la touche "Reset", qui est juste a coté du bouton "Filter".
+
+
+
+7) Fermer l'interface graphique ou bien terminer le programme pour le quitter.
+
+---------------------------------
+
+EXEMPLES D'EXÉCUTION FOURNIS :
+Le répertoire 'tests' contient des exemples des fichiers contenant un ou plusieurs hexdumps afin de tester le fonctionnement du programme.
+
+Tests sans exceptions :
+
+    tests/MainTest.txt : fichier contenant plusieurs trames différentes (des sources différentes)
+    tests/ClientServeur.txt : contient des trames entre un seul client et un seul serveur
+
+Tests des exceptions (le programme détecte les exceptions et les signale sur le terminal, gère l'exception et continue ou se termine selon le cas.) :
+
+    tests/vide.txt : fichier vide
+    tests/wrongDOC.txt : fichier de mauvais format. Aucun hexdump dedans.
+    tests/plusque1000trames.txt : fichier ayant plus de 1000 trames qui passe la limite de notre interface graphique.
+    tests/ARP.txt et tests/ARPinbetweenTCP.txt : contiennent un ou plusieurs trames contenant ARP au lieu de TCP
+    tests/TCPnonWEB.txt : fichier contenant un protocole TCP ayant une autre valeur que 80 pour le port du serveur.
+    tests/3tramesIncomplet.txt et tests/tramesincompletsETcomplets : fichiers contenant un ou plusieurs trames incomplets ()
+
+
+
+
+
+
+
